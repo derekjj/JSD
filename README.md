@@ -1,7 +1,22 @@
-# Johnston Software Development
+# johnston_software_development
 
-**This site is built using NuxtJS.**
+> Software Development Services
 
-Any questions or concerns can be sent to
+## Build Setup
 
-Derek@JohnstonSoftwareDevelopment.ca
+``` bash
+# install dependencies
+$ yarn install
+
+# serve with hot reload at localhost:3000
+$ yarn dev
+
+# build for production and launch server
+$ yarn build
+$ yarn start
+
+# generate static project
+$ yarn generate
+```
+
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
