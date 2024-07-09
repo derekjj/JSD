@@ -21,7 +21,7 @@
 		"prepare": "husky",
 		"lintfix": "prettier --write --list-different . && yarn lint:js --fix",
 		"lint:js": "eslint \"/**/*.{js,ts,vue}\" --fix",
-		"prettier": "prettier --write 'src/**/*.{js,ts,vue,json,css,scss,md}'",
+		"prettier": "prettier --write '/**/*.{js,ts,vue,json,css,scss,md}'",
 		"lint": "yarn prettier && yarn lint:js"
 	},
 	"husky": {
