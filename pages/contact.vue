@@ -1,4 +1,4 @@
-      {
+{
 <template lang="pug">
 .row
   .col-lg-2
@@ -28,18 +28,18 @@
 
 <style>
 .successful-server-response-wrapper {
-  display: flex;
-  justify-content: center;
-  align-content: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
 }
 
 .successful-server-response {
-  text-align: center;
-  max-width: 500px;
-  font-size: 36px;
-  background-color: #5cb85c;
-  color: #f1f1f1;
-  padding: 20px;
-  border-radius: 3px;
+	text-align: center;
+	max-width: 500px;
+	font-size: 36px;
+	background-color: #5cb85c;
+	color: #f1f1f1;
+	padding: 20px;
+	border-radius: 3px;
 }
 </style>

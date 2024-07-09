@@ -29,45 +29,46 @@ import Parallax from 'vue-parallaxy'
 import VueScreenSize from 'vue-screen-size'
 
 export default {
-  components: {
-    websites,
-    apps,
-    testimonials,
-    Parallax
-  },
-  methods: {
-    getImageUrl(img) {
-      return require(`~/assets/${img}`) 
-    }
-  },
-  mixins: [VueScreenSize.VueScreenSizeMixin],
-};
+	components: {
+		websites,
+		apps,
+		testimonials,
+		Parallax,
+	},
+	methods: {
+		getImageUrl(img) {
+			return require(`~/assets/${img}`)
+		},
+	},
+	mixins: [VueScreenSize.VueScreenSizeMixin],
+}
 </script>
 <style scoped>
 .container {
-  padding-bottom: 20px;
-  padding-top: 20px;
-  background-color: #FFF;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	background-color: #fff;
 }
 .title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+	font-family: 'Quicksand', 'Source Sans Pro', -apple-system,
+		BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+		sans-serif;
+	display: block;
+	font-weight: 300;
+	font-size: 100px;
+	color: #35495e;
+	letter-spacing: 1px;
 }
 
 .subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+	font-weight: 300;
+	font-size: 42px;
+	color: #526488;
+	word-spacing: 5px;
+	padding-bottom: 15px;
 }
 
 .links {
-  padding-top: 15px;
+	padding-top: 15px;
 }
 </style>

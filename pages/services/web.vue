@@ -7,10 +7,10 @@
 </template>
 
 <script>
-import pricing from '~/components/pricingTBD.vue';
+import pricing from '~/components/pricingTBD.vue'
 export default {
-  components: {
-    pricing
-  }
+	components: {
+		pricing,
+	},
 }
 </script>

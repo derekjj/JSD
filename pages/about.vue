@@ -13,9 +13,9 @@
 import Parallax from 'vue-parallaxy'
 import aboutSubjects from '~/components/aboutSubjects.vue'
 export default {
-  components: {
-    Parallax,
-    aboutSubjects
-  },
-};
+	components: {
+		Parallax,
+		aboutSubjects,
+	},
+}
 </script>

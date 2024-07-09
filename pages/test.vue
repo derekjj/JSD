@@ -1,7 +1,5 @@
 <template lang="pug">
   
 </template>
-<script>
-</script>
-<style lang="scss" scoped>
-</style>
+<script></script>
+<style lang="scss" scoped></style>

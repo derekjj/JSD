@@ -14,17 +14,17 @@
 
 <style scoped>
 .social-footer {
-  padding: 1rem;
-  background-color: #28a745;
+	padding: 1rem;
+	background-color: #28a745;
 }
 
 .social-footer .social-footer-icons .fa {
-  font-size: 1.6rem;
-  color: #fefefe;
+	font-size: 1.6rem;
+	color: #fefefe;
 }
 
 .social-footer .social-footer-icons .fa:hover {
-  color: #4a4a4a;
-  transition: color 0.3s ease-in;
+	color: #4a4a4a;
+	transition: color 0.3s ease-in;
 }
 </style>

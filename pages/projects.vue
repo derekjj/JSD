@@ -51,45 +51,42 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  data() {
-    return {
-      slide: 0,
-      sliding: null,
-      loading: false,
-      post: null,
-      error: null,
-      desc: null,
-      tab: "about"
-    };
-  },
-  created() {
-    this.selectProject();
-    this.project = this.$store.state.projects
-    
-  },
-  watch: {
-    $route: "selectProject"
-  },
-  
-  computed: {
-    ...mapGetters([
-      'projects',
-    ]),
-  },
-  methods: {
-    onSlideStart(slide) {
-      this.sliding = null;
-    },
-    onSlideEnd(slide) {
-      this.sliding = null;
-    },
-    selectProject() {
-      var pro = this.$route.params.project;
-      if (typeof pro == "undefined" || pro == null) {
-        pro = 0;
-      }
-      this.slide = pro;
-    },
-  }
-};
+	data() {
+		return {
+			slide: 0,
+			sliding: null,
+			loading: false,
+			post: null,
+			error: null,
+			desc: null,
+			tab: 'about',
+		}
+	},
+	created() {
+		this.selectProject()
+		this.project = this.$store.state.projects
+	},
+	watch: {
+		$route: 'selectProject',
+	},
+
+	computed: {
+		...mapGetters(['projects']),
+	},
+	methods: {
+		onSlideStart(slide) {
+			this.sliding = null
+		},
+		onSlideEnd(slide) {
+			this.sliding = null
+		},
+		selectProject() {
+			var pro = this.$route.params.project
+			if (typeof pro == 'undefined' || pro == null) {
+				pro = 0
+			}
+			this.slide = pro
+		},
+	},
+}
 </script>

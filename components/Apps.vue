@@ -28,28 +28,28 @@
 import { mapGetters } from 'vuex'
 // TODO: merge with Websites and projects
 export default {
-  data() {
-    return {
-      slide: 0,
-      sliding: null,
-    };
-  },
-  computed: {
-    ...mapGetters({projects: "apps"})
-  },
-  methods: {
-    onSlideStart(slide) {
-      this.sliding = true;
-    },
-    onSlideEnd(slide) {
-      this.sliding = true;
-    }
-  }
-};
+	data() {
+		return {
+			slide: 0,
+			sliding: null,
+		}
+	},
+	computed: {
+		...mapGetters({ projects: 'apps' }),
+	},
+	methods: {
+		onSlideStart(slide) {
+			this.sliding = true
+		},
+		onSlideEnd(slide) {
+			this.sliding = true
+		},
+	},
+}
 </script>
 
 <style scoped>
 .card .card-subtitle .card-text {
-  color: black !important;
+	color: black !important;
 }
 </style>

@@ -21,41 +21,41 @@
 
 <script>
 export default {
-    data() {
-        return {      
-            testimonials: [
-                {
-                author: "Who's Jimmy",
-                description: "",
-                raiting: null,
-                image: null,
-                },
-                {
-                author: "Who's Jimmy",
-                description: "",
-                raiting: null,
-                image: null,
-                },
-                {
-                author: "Who's Jimmy",
-                description: "",
-                raiting: null,
-                image: null,
-                },
-                {
-                author: "Who's Jimmy",
-                description: "",
-                raiting: null,
-                image: null,
-                },
-                {
-                author: "Who's Jimmy",
-                description: "",
-                raiting: null,
-                image: null,
-                },
-            ]
-        }
-    }
+	data() {
+		return {
+			testimonials: [
+				{
+					author: "Who's Jimmy",
+					description: '',
+					raiting: null,
+					image: null,
+				},
+				{
+					author: "Who's Jimmy",
+					description: '',
+					raiting: null,
+					image: null,
+				},
+				{
+					author: "Who's Jimmy",
+					description: '',
+					raiting: null,
+					image: null,
+				},
+				{
+					author: "Who's Jimmy",
+					description: '',
+					raiting: null,
+					image: null,
+				},
+				{
+					author: "Who's Jimmy",
+					description: '',
+					raiting: null,
+					image: null,
+				},
+			],
+		}
+	},
 }
 </script>

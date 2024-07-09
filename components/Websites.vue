@@ -26,29 +26,29 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex'
 export default {
-  data() {
-    return {
-      slide: 0,
-      sliding: null,
-    };
-  },
-  computed: {
-    ...mapGetters({projects: "web"})
-  },
-  methods: {
-    onSlideStart(slide) {
-      this.sliding = true;
-    },
-    onSlideEnd(slide) {
-      this.sliding = true;
-    }
-  }
-};
+	data() {
+		return {
+			slide: 0,
+			sliding: null,
+		}
+	},
+	computed: {
+		...mapGetters({ projects: 'web' }),
+	},
+	methods: {
+		onSlideStart(slide) {
+			this.sliding = true
+		},
+		onSlideEnd(slide) {
+			this.sliding = true
+		},
+	},
+}
 </script>
 <style scoped>
 .card .card-subtitle .card-text {
-  color: black !important;
+	color: black !important;
 }
 </style>

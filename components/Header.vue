@@ -26,12 +26,12 @@
 
 <style scoped>
 .dropdown-menu {
-  background-color: #28a745 !important;
+	background-color: #28a745 !important;
 }
 .hoverable:hover {
-  -webkit-box-shadow: none;
-  box-shadow: 0px 2px 2px 2px #CCCCCC;
-  -webkit-transition: all 0.80s ease-in-out;
-  transition: all 0.80s ease-in-out;
+	-webkit-box-shadow: none;
+	box-shadow: 0px 2px 2px 2px #cccccc;
+	-webkit-transition: all 0.8s ease-in-out;
+	transition: all 0.8s ease-in-out;
 }
 </style>
