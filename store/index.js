@@ -55,9 +55,9 @@ const store = () => {
 					dates: 'April 2018 - Sept 2019',
 					company: 'E-Data Now!',
 					shortDescription:
-						'Quality Inspection and Audit Management Software.',
+						'I contributed to the development of the administration site for the eDataNow! mobile application, accessible at https://www.edatanow.com/. As a Junior Developer, I worked on features for data collection, audit task setup, and displaying graphs, using Vue.js for the frontend and Ruby on Rails for the backend.',
 					description:
-						'Worked as a Software Developer on this near real time data collection system.  The primary use case is inspection and auditing in the automotive industry.   Typical a user will perform audits using E-Data Now Client (iOS/Swift/C++) and enter their Time sheet’s using E-  Data Now Time (Flutter/Dart).  The data is pushed up to a Rails API, where it’s presented to the Web Administrators using a cutting edge Nuxt/Vue.js frontend stack.',
+						'As a Junior Developer, I was involved in the development of the administration site for the eDataNow! mobile application, accessible at https://www.edatanow.com/. This platform is crucial for managing data collected from the mobile app, setting up audit tasks, and presenting data visually through graphs and charts. The frontend was developed using Vue.js, providing a responsive and interactive user interface that allowed administrators to efficiently manage and analyze data. The backend, powered by Ruby on Rails, ensured robust data handling and seamless integration with the mobile application. My responsibilities included implementing features for data collection, developing tools for audit task setup, and creating visual representations of data to facilitate better decision-making. This project provided me with valuable experience in web development and a deeper understanding of integrating frontend and backend technologies.',
 					about: '',
 					tech: [
 						'PhP',
@@ -90,9 +90,9 @@ const store = () => {
 					title: 'E-Data Now!',
 					company: 'E-Data Now!',
 					shortDescription:
-						'Quality Inspection and Audit Management Software.',
+						"I contributed to the development of the eDataNow! mobile application, available at https://play.google.com/store/apps/details?id=com.edatanow.edatanow_app, using Flutter. As a Junior Developer, I focused on building and enhancing various features to improve the app's functionality and user experience on both iOS and Android platforms.",
 					description:
-						'Quality Inspection and Audit Management Software.',
+						"As a Junior Developer, I was involved in the development of the eDataNow! mobile application, found at https://play.google.com/store/apps/details?id=com.edatanow.edatanow_app, using Flutter. My role encompassed building and refining multiple features to ensure smooth performance and an intuitive user experience across both iOS and Android devices. Working with Flutter allowed for a cohesive and efficient cross-platform development process. During this project, I collaborated closely with senior developers and other team members, contributing to the app's overall architecture and design. My responsibilities included writing clean and maintainable code, debugging, and optimizing the app's performance to meet user needs effectively. This experience helped me develop a strong foundation in mobile app development and teamwork..",
 					project: 'edataApp',
 					about: '',
 					tech: ['Swift', 'C++', 'Sqlite', 'Ruby on Rails'],
@@ -102,14 +102,36 @@ const store = () => {
 					type: 'app',
 					image: '../edata-app-time.png',
 					title: 'EDN Time',
+					link: 'https://play.google.com/store/apps/details?id=com.edatanow.edatanow_app',
 					company: 'E-Data Now!',
 					shortDescription:
-						'Helpful companion app to keep track of signing in and out of a job.',
+						"I contributed to the development of the eDataNow! mobile application, available at https://play.google.com/store/apps/details?id=com.edatanow.edatanow_app, using Flutter. As a Junior Developer, I focused on building and enhancing various features to improve the app's functionality and user experience on both iOS and Android platforms.",
 					description:
-						'Helpful companion app to keep track of signing in and out of a job.',
+						"As a Junior Developer, I was involved in the development of the eDataNow! mobile application, found at https://play.google.com/store/apps/details?id=com.edatanow.edatanow_app, using Flutter. My role encompassed building and refining multiple features to ensure smooth performance and an intuitive user experience across both iOS and Android devices. Working with Flutter allowed for a cohesive and efficient cross-platform development process. During this project, I collaborated closely with senior developers and other team members, contributing to the app's overall architecture and design. My responsibilities included writing clean and maintainable code, debugging, and optimizing the app's performance to meet user needs effectively. This experience helped me develop a strong foundation in mobile app development and teamwork..",
 					project: 'edataTime',
 					about: '',
 					tech: ['SQLite', 'Flutter'],
+				},
+				{
+					id: 6,
+					type: 'web',
+					image: '../tacklehunger.png',
+					title: 'Mapping App',
+					link: 'https://map.tacklehunger.org/',
+					company: 'Tackle Hunger',
+					shortDescription:
+						'I developed the interactive map page for the "Tackle Hunger" project at https://map.tacklehunger.org/. Utilizing React for the frontend, I integrated Mapbox GL JS for dynamic and customizable map features, and connected the application to a RESTful API for real-time data updates. The project emphasizes a responsive and user-friendly interface, ensuring seamless interaction across various devices.',
+					description:
+						'As a Senior Software Developer, I led the development of the map page for the "Tackle Hunger" initiative, accessible at https://map.tacklehunger.org/. The project\'s core was built using React, providing a robust and flexible framework for creating dynamic user interfaces. To enhance the mapping functionalities, I incorporated Mapbox GL JS, a powerful library that allowed for high-performance, interactive maps with a wide range of customization options. The application interfaces with a RESTful API, enabling real-time data updates and ensuring users have access to the most current information. The map page was designed with responsiveness in mind, ensuring an optimal experience on desktops, tablets, and mobile devices. My role involved not only the technical implementation but also collaborating with designers and stakeholders to deliver a feature-rich, user-centric mapping solution.',
+					project: 'edataTime',
+					about: '',
+					tech: [
+						'NextJS',
+						'ReactJS',
+						'Mapbox',
+						'Material-UI',
+						'Algolia',
+					],
 				},
 			],
 		},
