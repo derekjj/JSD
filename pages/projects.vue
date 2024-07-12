@@ -20,7 +20,6 @@ div
             a(:href="project.link" v-for="project in projects" :key="projects.id")
               b-carousel-slide(:img-src="project.image")
               //- img.card-img-top(:src="project.image" alt="Card image cap")
-              //- TODO: bug fix long descriptions on mobile screen overflowing
           .row
             .col-md.float-md-left
               | {{projects[slide].title}}
