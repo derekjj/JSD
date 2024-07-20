@@ -1,50 +1,102 @@
-<template lang="pug">
-div
-  .container.col-12
-    h1.text-center Projects
-  .row
-    .col-md-2
-    .col-md-8.m-4
-      .card
-        .card-title
-          b-carousel(
-            id="carousel-fade"
-            v-model="slide"
-            :interval="0"
-            fade
-            controls
-            indicators
-            img-width="970"
-            img-height="925"
-            style="")
-            a(:href="project.link" v-for="project in projects" :key="projects.id")
-              b-carousel-slide(:img-src="project.image")
-              //- img.card-img-top(:src="project.image" alt="Card image cap")
-          .row
-            .col-md.float-md-left
-              | {{projects[slide].title}}
-            .col-lg.float-md-right
-              b {{projects[slide].dates}}
-          .row
-            .col-12
-              a(:href="project.url") {{project.url}}
-        .card-body
-          .row
-            .btn-group.btn-group-toggle(data-toggle="buttons").col-12
-              label.btn.btn-success(v-bind:class="{ active: tab=='about' }")
-                input(@click="tab='about'" type="radio" name="options" id="option1" autocomplete="off" checked)
-                | About
-              label.btn.btn-success(v-bind:class="{ active: tab=='tech' }")
-                input(@click="tab='tech'" type="radio" name="options" id="option2" autocomplete="off")
-                | Tech
-                
-          .m-2
-            b {{projects[slide].company}}
-          div(v-if="tab=='about'")
-            | {{projects[slide].about}}{{projects[slide].description}}
-          div(v-if="tab=='tech'")
-            i(v-for="tech in projects[slide].tech") - {{tech}} -
-    .col-lg-2
+<template>
+	<div class="container">
+		<div v-if="selectedItem" class="project-details">
+			<div class="row">
+				<div class="col">
+					<button
+						class="btn btn-secondary"
+						@click="navigateItem('back')"
+						:disabled="!canNavigateBack"
+					>
+						Back
+					</button>
+				</div>
+				<div class="col text-center">
+					<select
+						id="itemSelector"
+						v-model="selectedItemId"
+						@change="loadSelectedItem"
+						class="form-select form-control"
+					>
+						<option
+							v-for="item in jsd"
+							:key="item.id"
+							:value="item.id"
+						>
+							{{ item.company }} - {{ item.project }}
+						</option>
+					</select>
+				</div>
+				<div class="col">
+					<button
+						class="btn btn-secondary"
+						@click="navigateItem('forward')"
+						:disabled="!canNavigateForward"
+					>
+						Forward
+					</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-4 text-center justify-content-center">
+					<img
+						:src="selectedItem.image"
+						alt="Project Image"
+						width="100%"
+					/>
+					<span v-if="selectedItem.url">
+						<a :href="selectedItem.url" target="_blank">{{
+							selectedItem.url
+						}}</a>
+					</span>
+				</div>
+				<div class="col align-content-center">
+					<div class="row" v-if="false">
+						<div class="col">
+							<span v-if="selectedItem.type">
+								<strong>Type:</strong> {{ selectedItem.type }}
+							</span>
+							<span v-if="selectedItem.project">
+								<strong>Project:</strong>
+								{{ selectedItem.project }}
+							</span>
+							<span v-if="selectedItem.dates">
+								<strong>Dates:</strong> {{ selectedItem.dates }}
+							</span>
+							<span v-if="selectedItem.company">
+								<strong>Company:</strong>
+								{{ selectedItem.company }}
+							</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<span v-if="selectedItem.tech.length > 1">
+								<strong>Tech:</strong>
+								{{ selectedItem.tech.join(', ') }}
+							</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<p>
+								<strong>Description:</strong>
+								{{ selectedItem.description }}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<p v-if="selectedItem.about">
+						<strong>About:</strong> {{ selectedItem.about }}
+					</p>
+				</div>
+			</div>
+			<div class="row"></div>
+		</div>
+	</div>
 </template>
 
 <script>
@@ -53,40 +105,90 @@ import { mapGetters } from 'vuex'
 export default {
 	data() {
 		return {
-			slide: 0,
-			sliding: null,
-			loading: false,
-			post: null,
-			error: null,
-			desc: null,
-			tab: 'about',
+			selectedItemId: null,
+			selectedItem: null,
 		}
 	},
-	created() {
-		this.selectProject()
-		this.project = this.$store.state.projects
-	},
-	watch: {
-		$route: 'selectProject',
-	},
-
 	computed: {
-		...mapGetters(['projects']),
+		...mapGetters(['jsd']),
+		canNavigateBack() {
+			return (
+				this.selectedItemId !== null &&
+				this.jsd.findIndex((item) => item.id === this.selectedItemId) >
+					0
+			)
+		},
+		canNavigateForward() {
+			return (
+				this.selectedItemId !== null &&
+				this.jsd.findIndex((item) => item.id === this.selectedItemId) <
+					this.jsd.length - 1
+			)
+		},
 	},
 	methods: {
-		onSlideStart(slide) {
-			this.sliding = null
+		loadSelectedItem() {
+			this.selectedItem = this.jsd.find(
+				(item) => item.id === this.selectedItemId
+			)
 		},
-		onSlideEnd(slide) {
-			this.sliding = null
-		},
-		selectProject() {
-			var pro = this.$route.params.project
-			if (typeof pro == 'undefined' || pro == null) {
-				pro = 0
+		navigateItem(direction) {
+			const currentIndex = this.jsd.findIndex(
+				(item) => item.id === this.selectedItemId
+			)
+			if (direction === 'back' && currentIndex > 0) {
+				this.selectedItemId = this.jsd[currentIndex - 1].id
+			} else if (
+				direction === 'forward' &&
+				currentIndex < this.jsd.length - 1
+			) {
+				this.selectedItemId = this.jsd[currentIndex + 1].id
 			}
-			this.slide = pro
+			this.selectedItem = this.jsd.find(
+				(item) => item.id === this.selectedItemId
+			)
+		},
+	},
+	async mounted() {
+		if (this.selectedItemId !== null) {
+			this.selectedItem = this.jsd.find(
+				(item) => item.id === this.selectedItemId
+			)
+		} else if (this.jsd.length > 0) {
+			this.selectedItemId = this.jsd[0].id
+			this.selectedItem = this.jsd[0]
+		} else {
+			//TODO: wait for jsd to load
+		}
+	},
+	props: {
+		initialSelectedItemId: {
+			type: Number,
+			default: null,
+		},
+	},
+	watch: {
+		initialSelectedItemId(newVal) {
+			this.selectedItemId = newVal
+			this.selectedItem = this.jsd.find(
+				(item) => item.id === this.selectedItemId
+			)
 		},
 	},
 }
 </script>
+
+<style scoped>
+.project-details {
+	margin-top: 20px;
+}
+
+.project-details img {
+	display: block;
+	margin-bottom: 20px;
+}
+
+.project-details p {
+	margin-bottom: 10px;
+}
+</style>

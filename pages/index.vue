@@ -1,24 +1,23 @@
 <template lang="pug">
-  div
-    v-parallax(
-      dark
-      :src="getImageUrl('devices.jpg')"
-      :height="$vssHeight"
-      jumbotron)
-      v-row(
-        align="center"
-        :height="$vssHeight"
-        justify="center")
-        v-col.mt-5.text-center(cols="12")
-          h1.mt-5.display-1.font-weight-thin.mb-4
-            | Web and Mobile Apps
-          h4.subheading Build your application today!
-    .container.bg-transparent
-      .row
-        websites.col-md-6
-        apps.col-md-6
-    //- .container.col-12.mb-5.bg-transparent
-      testimonials.col-12
+div
+	v-parallax(
+		dark
+		:src="getImageUrl('devices.jpg')"
+		:height="$vssHeight"
+		jumbotron)
+		v-row(
+		align="center"
+		:height="$vssHeight"
+		justify="center")
+		v-col.mt-5.text-center(cols="12")
+			h1.mt-5.display-1.font-weight-thin.mb-4
+			| Web and Mobile Apps
+			h4.subheading Build your application today!
+	.container.bg-transparent
+		.row
+			websites
+	//- .container.col-12.mb-5.bg-transparent
+		testimonials.col-12
 </template>
 <script>
 //TODO: set height of a parallax to the window height (handle on change)

@@ -22,12 +22,14 @@
       .card-header.p-3(style="color: black; background-color: #FFF;")
         h3 {{projects[slide].company}}
       //- TODO: bug fix long descriptions on mobile screen overflowing
-      .card-text.p-3(style="color: black; height: 130px; background-color: #FFF;") {{projects[slide].shortDescription}}
+      .card-body
+        .card-text.p-3(style="color: black; min-height: 200px; background-color: #FFF;") {{projects[slide].description || projects[slide].shortDescription}}
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 // TODO: merge with Websites and projects
+// TODO: bug fix long descriptions on mobile screen overflowing
 export default {
 	data() {
 		return {

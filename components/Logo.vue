@@ -37,3 +37,4 @@
 	}
 }
 </style>
+specific resume (normalize bullet points) - number of projects - brag more

@@ -1,22 +1,35 @@
 <template lang="pug">
-  div
-    app-header
-    nuxt.body.mt-2.mb-2
-    app-footer
+div
+	app-header
+	nuxt.body.mt-2.mb-2
+	app-footer
+	loader(:loading="loading")
 </template>
 
 <script>
+//TODO: fix floating footer
 import Header from '~/components/Header.vue'
 import Footer from '~/components/Footer.vue'
+import Loader from '~/components/Loader.vue'
+import { mapState } from 'vuex'
+
 export default {
 	components: {
 		appHeader: Header,
 		appFooter: Footer,
+		loader: Loader,
+	},
+	computed: {
+		...mapState(['loading']),
+	},
+	async mounted() {
+		await this.$store.dispatch('nuxtClientInit')
 	},
 }
 </script>
 
 <style>
+/* Carousel Styles */
 .carousel-indicators,
 .carousel-control-prev,
 .carousel-control-next {
@@ -30,48 +43,30 @@ export default {
 	height: 40px;
 }
 
+/* Header Styles */
 h1,
 h4 {
 	text-shadow: #222 0.1em 0.1em 0.1em;
 	color: #fff;
 }
-
 h2 {
 	color: #28a745;
 }
-
 .card-header {
 	background-color: #28a745;
 	color: #fff;
 }
 
+/* Body Styles */
 .body {
-	padding: 45px 0 0 0;
+	padding: 45px 0 0;
 	margin: 0 auto;
-	/* display: flex; */
 	justify-content: center;
 	align-items: center;
 	text-align: center;
 }
 
-.bg-transparent {
-	opacity: 1;
-	filter: alpha(opacity=0); /* For IE8 and earlier */
-}
-
-.hoverable:hover {
-	-webkit-box-shadow: none;
-	box-shadow: 3px 5px #cccccc;
-	-webkit-transition: all 0.8s ease-in-out;
-	transition: all 0.8s ease-in-out;
-}
-.hoverable {
-	-webkit-box-shadow: none;
-	box-shadow: 0px 0px 0px 0px #cccccc;
-	-webkit-transition: all 0.5s ease-out;
-	transition: all 0.5s ease-out;
-}
-
+/* General Styles */
 html {
 	font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
 		'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -83,7 +78,6 @@ html {
 	-webkit-font-smoothing: antialiased;
 	box-sizing: border-box;
 }
-
 *,
 *:before,
 *:after {
@@ -93,6 +87,8 @@ html {
 a {
 	text-decoration: none !important;
 }
+
+/* Dropdown Styles */
 .dropdown-item.active {
 	background-color: #cccccc;
 }
@@ -100,6 +96,7 @@ a {
 	background-color: #cccccc;
 }
 
+/* Button Styles */
 .button--green {
 	display: inline-block;
 	border-radius: 4px;
@@ -108,12 +105,10 @@ a {
 	text-decoration: none;
 	padding: 10px 30px;
 }
-
 .button--green:hover {
 	color: #fff;
 	background-color: #3b8070;
 }
-
 .button--grey {
 	display: inline-block;
 	border-radius: 4px;
@@ -123,7 +118,6 @@ a {
 	padding: 10px 30px;
 	margin-left: 15px;
 }
-
 .button--grey:hover {
 	color: #fff;
 	background-color: #35495e;
