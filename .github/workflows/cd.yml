@@ -26,7 +26,7 @@ jobs:
             NUXT_ENV_FIREBASE_MEASUREMENT_ID: ${{ secrets.NUXT_ENV_FIREBASE_MEASUREMENT_ID }}
         steps:
             - name: Checkout 🛎
-              uses: actions/checkout@v2
+              uses: actions/checkout@master
 
             - name: Setup node env 🏗
               uses: actions/setup-node@v3
@@ -36,13 +36,13 @@ jobs:
 
             - name: Get yarn cache directory path 🛠
               id: yarn-cache-dir-path
-              run: echo "dir=$(yarn cache dir)" >> $GITHUB_ENV
+              run: echo "::set-output name=dir::$(yarn cache dir)" >> $GITHUB_ENV
 
             - name: Cache node_modules 📦
               uses: actions/cache@v4.0.2
               id: yarn-cache
               with:
-                  path: ${{ env.dir }}
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
                   key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
                   restore-keys: |
                       ${{ runner.os }}-yarn-
