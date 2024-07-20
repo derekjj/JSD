@@ -1,14 +1,14 @@
 <template lang="pug">
-  footer.d-flex.justify-content-around.social-footer
-    .social-footer-icons        
-      //- a.col-sm-3(href="https://www.facebook.com/DJDesign.ca")
-        i.fa.fa-facebook(aria-hidden="true")
-      a.col-sm-3(href="https://github.com/derekjj")
-        i.fa.fa-github(aria-hidden="true")
-      a.col-sm-3(href="https://www.linkedin.com/company/johnston-software-development")
-        i.fa.fa-linkedin(aria-hidden="true")
-      router-link.col-sm-3(to="/contact")
-        i.fa.fa-address-card-o(aria-hidden="true")
+footer.d-flex.justify-content-around.social-footer
+  .social-footer-icons        
+    //- a.col-sm-3(href="https://www.facebook.com/DJDesign.ca")
+      i.fa.fa-facebook(aria-hidden="true")
+    a.col-sm-3(href="https://github.com/derekjj")
+      i.fa.fa-github(aria-hidden="true")
+    a.col-sm-3(href="https://www.linkedin.com/company/johnston-software-development")
+      i.fa.fa-linkedin(aria-hidden="true")
+    router-link.col-sm-3(to="/contact")
+      i.fa.fa-address-card-o(aria-hidden="true")
       
 </template>
 
