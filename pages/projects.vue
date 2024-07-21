@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<div class="container mt-2">
 		<div v-if="selectedItem" class="project-details">
 			<div class="row">
 				<div class="col">
