@@ -23,7 +23,9 @@
 							:key="item.id"
 							:value="item.id"
 						>
-							{{ item.company }} - {{ item.project }}
+							{{ item.company }}
+							{{ item.project && item.company ? ' - ' : '' }}
+							{{ item.project }}
 						</option>
 					</select>
 				</div>
