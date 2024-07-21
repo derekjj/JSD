@@ -8,7 +8,6 @@ div
 
 <script>
 //TODO: fix floating footer
-//TODO: fix header overlap on deploy
 import Header from '~/components/Header.vue'
 import Footer from '~/components/Footer.vue'
 import Loader from '~/components/Loader.vue'
