@@ -282,7 +282,8 @@ export default {
 					doc(firestore, 'projects', this.selectedItem.id.toString()),
 					this.selectedItem
 				)
-				// console.log('Item saved:', this.selectedItem)
+				// TODO: add success message/toast
+				console.log('Item saved:', this.selectedItem)
 			} catch (error) {
 				console.error('Error saving item:', error)
 			}
@@ -299,6 +300,7 @@ export default {
 					batch.set(docRef, item)
 				})
 				await batch.commit()
+				// TODO: add success message/toast
 				console.log('All items saved')
 			} catch (error) {
 				console.error('Error saving all items:', error)
@@ -331,6 +333,8 @@ export default {
 			]
 		},
 		addTech() {
+			if (this.selectedItem.tech == '') this.selectedItem.tech = []
+
 			this.selectedItem.tech.push('')
 		},
 		removeTech(index) {
