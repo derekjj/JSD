@@ -5,7 +5,7 @@
 			h2.text-center Projects
 	.row
 		.col-md-6.col-lg-4(v-for="project in projects" :key="projects.id")
-			router-link(:to="{name: 'projects', params: { project:project.id } }" )
+			nuxt-link(:to="{name: 'projects', param: { initialSelectedItemId: project.id } }" )
 				.card.h-100
 					//- router-link(:to="project.link" v-for="project in projects" :key="projects.id")
 					.card-header.p-3(style="color: black; background-color: #FFF;")
