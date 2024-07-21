@@ -134,15 +134,19 @@ export default {
 		},
 		navigateItem(direction) {
 			const currentIndex = this.jsd.findIndex(
-				(item) => item.id === this.selectedItemId
+				(item) => item.id == this.selectedItemId
 			)
 			if (direction === 'back' && currentIndex > 0) {
-				this.selectedItemId = this.jsd[currentIndex - 1].id
+				this.$router.push({
+					path: '/projects/' + this.jsd[currentIndex - 1].id,
+				})
 			} else if (
 				direction === 'forward' &&
 				currentIndex < this.jsd.length - 1
 			) {
-				this.selectedItemId = this.jsd[currentIndex + 1].id
+				this.$router.push({
+					path: '/projects/' + this.jsd[currentIndex + 1].id,
+				})
 			}
 			this.selectedItem = this.jsd.find(
 				(item) => item.id === this.selectedItemId
@@ -150,29 +154,18 @@ export default {
 		},
 	},
 	async mounted() {
-		if (this.selectedItemId !== null) {
-			this.selectedItem = this.jsd.find(
-				(item) => item.id === this.selectedItemId
-			)
-		} else if (this.jsd.length > 0) {
-			this.selectedItemId = this.jsd[0].id
-			this.selectedItem = this.jsd[0]
-		} else {
-			//TODO: wait for jsd to load
-		}
-	},
-	props: {
-		initialSelectedItemId: {
-			type: Number,
-			default: null,
-		},
+		this.selectedItemId = this.$route.params.id || 0
+		this.selectedItem = this.jsd.find(
+			(item) => item.id == this.selectedItemId
+		)
 	},
 	watch: {
-		initialSelectedItemId(newVal) {
-			this.selectedItemId = newVal
-			this.selectedItem = this.jsd.find(
-				(item) => item.id === this.selectedItemId
-			)
+		jsd() {
+			if (this.selectedItemId !== null) {
+				this.selectedItem = this.jsd.find(
+					(item) => item.id == this.selectedItemId
+				)
+			}
 		},
 	},
 }
