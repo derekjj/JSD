@@ -1,13 +1,14 @@
 <template lang="pug">
 div
 	app-header
-	nuxt.body.mt-2.mb-2
+	nuxt.body.mt-4.mb-2
 	app-footer
 	loader(:loading="loading")
 </template>
 
 <script>
 //TODO: fix floating footer
+//TODO: fix header overlap on deploy
 import Header from '~/components/Header.vue'
 import Footer from '~/components/Footer.vue'
 import Loader from '~/components/Loader.vue'
