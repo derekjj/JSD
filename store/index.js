@@ -17,7 +17,7 @@ const store = () => {
 				loggedIn: false,
 			},
 			projects: [],
-			loading: false,
+			loading: true,
 		},
 		actions: {
 			nuxtClientInit({ commit }) {
