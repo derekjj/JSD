@@ -1,6 +1,6 @@
 <template>
 	<div class="container mt-4">
-		<div v-if="selectedItem" class="project-details mt-2">
+		<div v-if="selectedItem" class="project-details">
 			<div class="row">
 				<div class="col">
 					<button
@@ -180,7 +180,7 @@ export default {
 
 <style scoped>
 .project-details {
-	margin-top: 20px;
+	margin-top: 40px;
 }
 
 .project-details img {
