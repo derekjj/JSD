@@ -1,15 +1,24 @@
 <template>
 	<div class="container">
-		<label for="itemSelector">Select Item by ID:</label>
-
-		<div class="row mb-3">
+		<div class="row">
 			<div class="col"></div>
+			<div class="col">
+				<button class="btn btn-primary" @click="addItem">
+					Add Project
+				</button>
+			</div>
+			<div class="col"></div>
+		</div>
+		<div class="row mb-3">
+			<div class="col-3">
+				<label for="itemSelector">Select Project:</label>
+			</div>
 			<div class="col">
 				<select
 					id="itemSelector"
 					v-model="selectedItemId"
 					@change="loadSelectedItem"
-					class="form-select"
+					class="form-control"
 				>
 					<option
 						v-for="item in sortedItems"
@@ -19,11 +28,6 @@
 						{{ item.id }} - {{ item.project }}
 					</option>
 				</select>
-			</div>
-			<div class="col">
-				<button class="btn btn-primary" @click="addItem">
-					Add New Item
-				</button>
 			</div>
 		</div>
 
