@@ -3,7 +3,7 @@
 	.row
 		.col
 			h2.text-center Projects
-	.row
+	.row.justify-content-center
 		.col-md-6.col-lg-4(v-for="project in projects" :key="project.id")
 			nuxt-link(:to="'/projects/' + project.id " )
 				.card.h-100
