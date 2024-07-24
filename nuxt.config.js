@@ -1,9 +1,5 @@
 export default {
 	mode: 'spa',
-	target: 'static',
-	router: {
-		base: '/JSD/',
-	},
 	/*
 	 ** Headers of the page
 	 */
