@@ -5,7 +5,7 @@
 </template>
 <script>
 import error404 from '~/pages/404.vue'
-import error500 from '~/pages/500.vue';
+import error500 from '~/pages/500.vue'
 export default {
 	name: 'nuxt-error',
 	layout: 'default', // optional
