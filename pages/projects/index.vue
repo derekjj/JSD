@@ -9,7 +9,6 @@ export default {
 		jsd(val) {
 			// handle when direct loading on page from url
 			if (val && val.length > 0) {
-				console.log('jsd', val)
 				this.$router.push('/projects/' + val[0].id)
 			}
 		},
