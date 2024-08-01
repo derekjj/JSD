@@ -40,7 +40,9 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-4 text-center justify-content-center">
+				<div
+					class="col-sm-12 col-md-4 text-center justify-content-center"
+				>
 					<img
 						:src="selectedItem.image"
 						alt="Project Image"
