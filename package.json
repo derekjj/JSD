@@ -45,7 +45,7 @@
 		"vuelidate": "^0.7.4",
 		"@nuxtjs/vuetify": "^1.10.2",
 		"pug-plain-loader": "^1.0.0",
-		"vuetify": "^2.2.4"
+		"vuetify": "^3.6.14"
 	},
 	"devDependencies": {
 		"@nuxt/eslint-config": "^0.3.10",
