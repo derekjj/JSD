@@ -1,5 +1,5 @@
 <template lang="pug">
-div
+.body-container
 	app-header
 	nuxt.body.mt-2.mb-2
 	app-footer
@@ -7,7 +7,6 @@ div
 </template>
 
 <script>
-//TODO: fix floating footer
 import Header from '~/components/Header.vue'
 import Footer from '~/components/Footer.vue'
 import Loader from '~/components/Loader.vue'
@@ -58,12 +57,14 @@ h2 {
 }
 
 /* Body Styles */
-.body {
-	padding: 45px 0 0;
+.body-container {
 	margin: 0 auto;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+}
+.body {
+	min-height: calc(100vh - 82px);
 }
 
 /* General Styles */

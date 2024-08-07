@@ -1,5 +1,5 @@
 <template lang="pug">
-footer.d-flex.justify-content-around.social-footer
+footer.d-flex.justify-content-around.social-footer.m-0
   .social-footer-icons        
     //- a.col-sm-3(href="https://www.facebook.com/DJDesign.ca")
       i.fa.fa-facebook(aria-hidden="true")
@@ -13,9 +13,10 @@ footer.d-flex.justify-content-around.social-footer
 </template>
 
 <style scoped>
-.social-footer {
-	padding: 1rem;
+footer {
+	padding: 10px;
 	background-color: #28a745;
+  height: 50px;
 }
 
 .social-footer .social-footer-icons .fa {
