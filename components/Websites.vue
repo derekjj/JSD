@@ -4,16 +4,16 @@
 		.col
 			h2.text-center Projects
 	.row.justify-content-center
-		.col-md-6.col-lg-4(v-for="project in projects" :key="project.id")
+		.col-sm-6.col-md-4.col-lg-3.col-xl-2(v-for="project in projects" :key="project.id")
 			nuxt-link(:to="'/projects/' + project.id " )
 				.card.h-100
 					//- router-link(:to="project.link" v-for="project in projects" :key="projects.id")
 					.card-header.p-3(style="color: black; background-color: #FFF;")
 						img.screen-shot(:src="project.image")
-						h3.text-primary {{project.company}}
+						//- h3.text-primary {{project.company}}
 					//- TODO: bug fix long descriptions on mobile screen overflowing
 					.card-body
-						.card-text.p-3(style="color: black; min-height: 200px; background-color: #FFF;") {{project.teaser || project.description || project.shortDescription}}
+						.card-text.p-3(style="color: black; background-color: #FFF;") {{project.teaser || project.description || project.shortDescription}}
 </template>
 
 <script>

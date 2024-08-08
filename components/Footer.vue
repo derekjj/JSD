@@ -16,7 +16,7 @@ footer.d-flex.justify-content-around.social-footer.m-0
 footer {
 	padding: 10px;
 	background-color: #28a745;
-  height: 50px;
+	height: 50px;
 }
 
 .social-footer .social-footer-icons .fa {
